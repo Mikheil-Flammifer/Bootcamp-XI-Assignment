@@ -20,17 +20,28 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+# Registration Form
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What it does
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The user fills in their details across 3 steps:
 
-## Deploy on Vercel
+1. **Email** — enters their email address
+2. **Password** — sets and confirms a password
+3. **Profile** — picks a username and optionally uploads an avatar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Each step is validated before moving to the next. On the final step the form submits to the API and calls `onSuccess` with the created user.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Steps indicator
+
+Three bars at the top of the form show progress — completed steps turn solid indigo, the current step is light purple, upcoming steps are very light.
+
+## Components
+
+- `RegisterForm` — the main shell
+- `FormTitle` — reusable heading + subtitle
+- `FormInput` — reusable label + input + inline error
+- `FormButton` — reusable submit button
+
+

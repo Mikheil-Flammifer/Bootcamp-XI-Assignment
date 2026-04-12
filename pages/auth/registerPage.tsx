@@ -12,7 +12,7 @@ export default function RegisterPage() {
       {/* Your actual page content underneath */}
       <main className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4">
         <h1 className="text-2xl font-medium text-gray-800">Welcome</h1>
-        <p className="text-gray-500 text-sm">Create an account to get started.</p>
+        <p className="text-gray-500 text-sm">Create Account</p>
 
         <div className="flex gap-3">
           <button
