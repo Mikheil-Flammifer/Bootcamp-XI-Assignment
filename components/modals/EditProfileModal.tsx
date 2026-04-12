@@ -1,18 +1,15 @@
-"use client";
 import { useEffect } from "react";
-import RegisterForm from "@/components/forms/userForms/RegisterForm";
-
-import type { User } from "@/types/user/types"
+import EditProfileForm from "@/components/forms/userForms/EditProfileForm";
+import type { User } from "@/types/user/types";
 
 interface Props {
   onClose: () => void;
-  onSwitchToLogin: () => void;
   onSuccess: (user: User) => void;
+  user: User;
 }
 
-export default function RegisterModal({ onClose, onSwitchToLogin, onSuccess }: Props) {
+export default function EditProfileModal({ onClose, onSuccess, user }: Props) {
 
-  // Close on Escape key
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -21,28 +18,25 @@ export default function RegisterModal({ onClose, onSwitchToLogin, onSuccess }: P
     return () => document.removeEventListener("keydown", handler);
   }, [onClose]);
 
-  // Prevent body scroll while modal is open
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = ""; };
   }, []);
 
   return (
-    // Backdrop — click outside to close
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       style={{ backgroundColor: "rgba(0, 0, 0, 0.45)" }}
       onClick={onClose}
     >
-      {/* Modal panel — stop click from bubbling to backdrop */}
       <div
         className="w-[460px] bg-white rounded-2xl shadow-xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <RegisterForm
-          onSuccess={onSuccess}
-          onSwitchToLogin={onSwitchToLogin}
+        <EditProfileForm
           onClose={onClose}
+          onSuccess={onSuccess}
+          user={user}
         />
       </div>
     </div>

@@ -3,6 +3,8 @@ import { FormInput } from "@/components/ui/FormInput";
 import { FormButton } from "@/components/ui/FormButton";
 import { useLoginForm } from "@/hooks/useLoginForm";
 
+import { User } from "@/types/user/types"
+
 interface Props {
   onSuccess: (user: unknown) => void;
   onSwitchToRegister: () => void;

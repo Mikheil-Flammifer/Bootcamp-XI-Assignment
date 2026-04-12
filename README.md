@@ -20,30 +20,47 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+# Auth & Profile Forms
 
-# Auth Forms
-
-Two modal forms — Register and Login — built with React, TypeScript and Tailwind CSS. Both share the same reusable UI components and can be switched between on any page.
+Modal forms for Register, Login, and Edit Profile built with React, TypeScript and Tailwind CSS.
 
 ---
 
 ## Registration Form
 
-A 3-step form that collects user details progressively to keep each screen focused.
+3-step form that collects user details progressively.
 
-**Steps:**
-1. **Email** — user enters their email address
-2. **Password** — user sets and confirms a password
-3. **Profile** — user picks a username and optionally uploads an avatar (JPG, PNG, WebP)
+1. **Email** — validates format
+2. **Password** — min 6 chars, must match confirm
+3. **Profile** — username + optional avatar upload (JPG, PNG, WebP)
 
-Each step is validated before advancing. On the final step the form submits to the API and calls `onSuccess` with the created user.
+On final step submits to API (or `mockRegister` in dev) and calls `onSuccess(user)`.
 
+**Hook:** `useRegisterForm` — step state, per-step validation, avatar file handling, API submission.
+
+---
 
 ## Login Form
 
-A single-step form with email and password fields.
+Single step — email + password. Calls `onSuccess(user)` on success, shows inline API error on failure.
 
-The user enters their credentials and submits. On success `onSuccess` is called with the authenticated user. On failure an inline API error is shown above the fields.
+**Hook:** `useLoginForm` — validation, API submission (or `mockLogin` in dev).
+
+---
+
+## Edit Profile Form
+
+Shows current user's avatar, username, and online status at the top. Fields: Full Name, Email, Mobile Number, Age, Avatar upload.
+
+**Hook:** `useEditProfileForm(initialUser, onSuccess)` — initializes fields from the `User` object, validates, submits PATCH to API.
+
+---
 
 
+## Mock Auth (dev only)
 
+Before the backend is ready, `src/lib/mockAuth.ts` provides:
+- `mockLogin(email, password)` — finds user in `src/data/mockUsers.json`
+- `mockRegister(email, username)` — returns a new fake user
+
+User is persisted via `src/lib/storage.ts` (`saveUser`, `getUser`, `clearUser`) using `localStorage`. Swap for real API calls when backend is ready — nothing else changes.

@@ -8,15 +8,3 @@ export interface User {
   age: number | null;
   profileComplete: boolean; 
 }
-
-export interface RegisterPayload {
-  username: string;
-  email: string;
-  password: string;
-  avatar?: File | null;
-}
-
-export interface LoginPayload {
-  email: string;
-  password: string;
-}

@@ -1,8 +1,17 @@
+// app/page.tsx  (or /auth) — public, not logged in
 "use client";
 import { useState } from "react";
 import RegisterModal from "@/components/modals/RegisterModal";
 import LoginModal from "@/components/modals/LoginModal";
+import { saveUser } from "@/lib/storage";
+
 import type { User } from "@/types/user/types";
+
+const handleSuccess = (user: User) => {
+  saveUser(user);                  
+  window.location.href = "/dashboard";
+};
+
 
 export default function AuthPage() {
   const [modal, setModal] = useState<"register" | "login" | null>("register");

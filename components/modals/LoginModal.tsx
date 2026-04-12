@@ -2,10 +2,12 @@
 import { useEffect } from "react";
 import LoginForm from "@/components/forms/userForms/LoginForm";
 
+import type { User } from "@/types/user/types"
+
 interface Props {
   onClose: () => void;
   onSwitchToRegister: () => void;
-  onSuccess: (user: unknown) => void;
+  onSuccess: (user: User) => void;
 }
 
 export default function LoginModal({ onClose, onSwitchToRegister, onSuccess }: Props) {

@@ -6,8 +6,10 @@ import { FormButton } from "@/components/ui/FormButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 
+import type { User } from "@/types/user/types";
+
 interface Props {
-  onSuccess: (user: unknown) => void;
+  onSuccess: (user: User) => void;
   onSwitchToLogin: () => void;
   onClose?: () => void;
 }

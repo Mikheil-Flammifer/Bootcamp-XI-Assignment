@@ -1,5 +1,8 @@
 import { useState, useRef } from "react";
-import type { User } from "@/types/user/";
+import { mockRegister } from "@/lib/mockAuth";
+
+import type { User } from "@/types/user/types";
+import type { Errors } from "@/types/errors/types"
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
@@ -15,15 +18,6 @@ interface FormState {
   avatarPreview: string | null;
 }
 
-interface FormErrors {
-  email?: string;
-  password?: string;
-  confirmPassword?: string;
-  username?: string;
-  avatar?: string;
-  api?: string;
-}
-
 export function useRegisterForm(onSuccess: (user: User) => void) {
   const [step, setStep] = useState<Step>(1);
   const [form, setForm] = useState<FormState>({
@@ -34,23 +28,25 @@ export function useRegisterForm(onSuccess: (user: User) => void) {
     avatar: null,
     avatarPreview: null,
   });
-  const [errors, setErrors] = useState<FormErrors>({});
+  const [errors, setErrors] = useState<Errors>({});
   const [loading, setLoading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const setField = (field: keyof FormState, value: unknown) =>
     setForm((prev) => ({ ...prev, [field]: value }));
 
-  const clearError = (field: keyof FormErrors) =>
+  const clearError = (field: keyof Errors) =>
     setErrors((prev) => {
       const next = { ...prev };
       delete next[field];
       return next;
     });
 
+    
+
   // Each step validates only its own fields
-  const validateStep = (): FormErrors => {
-    const e: FormErrors = {};
+  const validateStep = (): Errors => {
+    const e: Errors = {};
 
     if (step === 1) {
       if (!form.email || !EMAIL_REGEX.test(form.email))

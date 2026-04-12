@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "username": "john_doe",
+    "email": "john@example.com",
+    "password": "password123",
+    "avatar": null,
+    "fullName": "John Doe",
+    "mobileNumber": "+995 599100001",
+    "age": 28,
+    "profileComplete": true
+  },
+  {
+    "id": 2,
+    "username": "jane_smith",
+    "email": "jane@example.com",
+    "password": "pass1000",
+    "avatar": null,
+    "fullName": "Jane Smith",
+    "mobileNumber": "+995 599100002",
+    "age": 24,
+    "profileComplete": true
+  },
+  {
+    "id": 3,
+    "username": "new_user",
+    "email": "new@example.com",
+    "password": "20262026",
+    "avatar": null,
+    "fullName": null,
+    "mobileNumber": null,
+    "age": null,
+    "profileComplete": false
+  }
+]
