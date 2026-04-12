@@ -1,15 +1,15 @@
 "use client";
 import { useState } from "react";
 import RegisterModal from "@/components/modals/RegisterModal";
+import LoginModal from "@/components/modals/LoginModal";
 
 type ModalState = "register" | "login" | null;
 
 export default function RegisterPage() {
-  const [modal, setModal] = useState<ModalState>("register"); // open by default
+  const [modal, setModal] = useState<ModalState>("register");
 
   return (
     <>
-      {/* Your actual page content underneath */}
       <main className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4">
         <h1 className="text-2xl font-medium text-gray-800">Welcome</h1>
         <p className="text-gray-500 text-sm">Create an account to get started.</p>
@@ -30,7 +30,6 @@ export default function RegisterPage() {
         </div>
       </main>
 
-      {/* Modal overlays — rendered above everything */}
       {modal === "register" && (
         <RegisterModal
           onClose={() => setModal(null)}
@@ -38,7 +37,17 @@ export default function RegisterPage() {
           onSuccess={(user) => {
             console.log("Registered:", user);
             setModal(null);
-            // redirect or update global auth state here
+          }}
+        />
+      )}
+
+      {modal === "login" && (
+        <LoginModal
+          onClose={() => setModal(null)}
+          onSwitchToRegister={() => setModal("register")}
+          onSuccess={(user) => {
+            console.log("Logged in:", user);
+            setModal(null);
           }}
         />
       )}

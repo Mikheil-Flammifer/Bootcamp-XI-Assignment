@@ -21,27 +21,29 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 
-# Registration Form
+# Auth Forms
 
-## What it does
+Two modal forms — Register and Login — built with React, TypeScript and Tailwind CSS. Both share the same reusable UI components and can be switched between on any page.
 
-The user fills in their details across 3 steps:
+---
 
-1. **Email** — enters their email address
-2. **Password** — sets and confirms a password
-3. **Profile** — picks a username and optionally uploads an avatar
+## Registration Form
 
-Each step is validated before moving to the next. On the final step the form submits to the API and calls `onSuccess` with the created user.
+A 3-step form that collects user details progressively to keep each screen focused.
 
-## Steps indicator
+**Steps:**
+1. **Email** — user enters their email address
+2. **Password** — user sets and confirms a password
+3. **Profile** — user picks a username and optionally uploads an avatar (JPG, PNG, WebP)
 
-Three bars at the top of the form show progress — completed steps turn solid indigo, the current step is light purple, upcoming steps are very light.
+Each step is validated before advancing. On the final step the form submits to the API and calls `onSuccess` with the created user.
 
-## Components
 
-- `RegisterForm` — the main shell
-- `FormTitle` — reusable heading + subtitle
-- `FormInput` — reusable label + input + inline error
-- `FormButton` — reusable submit button
+## Login Form
+
+A single-step form with email and password fields.
+
+The user enters their credentials and submits. On success `onSuccess` is called with the authenticated user. On failure an inline API error is shown above the fields.
+
 
 
