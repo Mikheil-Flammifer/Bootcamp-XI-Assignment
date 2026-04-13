@@ -100,25 +100,12 @@ export function useRegisterForm(onSuccess: (user: User) => void) {
     }
 
     // Step 3 — final submit
-    setLoading(true);
+   setLoading(true);
     try {
-      const fd = new FormData();
-      fd.append("email", form.email);
-      fd.append("password", form.password);
-      fd.append("username", form.username);
-      if (form.avatar) fd.append("avatar", form.avatar);
-
-      const res = await fetch("/api/auth/register", { method: "POST", body: fd });
-      const data = await res.json();
-
-      if (!res.ok) {
-        if (data.field) setErrors({ [data.field]: data.message });
-        else setErrors({ api: data.message ?? "Registration failed." });
-        return;
-      }
-      onSuccess(data.user);
-    } catch {
-      setErrors({ api: "Network error. Please check your connection." });
+      const user = mockRegister(form.email, form.username);
+      onSuccess(user);
+    } catch (err) {
+      setErrors({ api: (err as Error).message });
     } finally {
       setLoading(false);
     }

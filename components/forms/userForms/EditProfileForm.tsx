@@ -112,7 +112,7 @@ export default function EditProfileForm({ onClose, onSuccess, user }: Props) {
                   placeholder="+995 599209820"
                   value={form.mobileNumber}
                   error={errors.mobileNumber}
-                  //style={{ width: "267px" }}
+                  style={{ width: "267px" }}
                   onChange={(v) => setField("mobileNumber", v)}
                   onClearError={() => clearError("mobileNumber")}
                 />
@@ -122,14 +122,14 @@ export default function EditProfileForm({ onClose, onSuccess, user }: Props) {
                   placeholder="29"
                   value={form.age}
                   error={errors.age}
-                  //style={{ width: "85px" }}
+                  style={{ width: "85px" }}
                   onChange={(v) => setField("age", v)}
                   onClearError={() => clearError("age")}
                 />
               </div>
 
               {/* Avatar upload */}
-              <div className="flex flex-col w-[360px] h-[169px] gap-[12px]">
+              <div className="flex flex-col w-[360px] h-[171px] gap-[12px]">
                 <label className="h-[17px] font-inter text-sm font-medium text-gray-700">
                   Upload Avatar
                 </label>

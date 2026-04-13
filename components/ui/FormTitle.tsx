@@ -1,3 +1,6 @@
+/*
+Component to make input more dinamic to use in other files
+*/
 interface Props {
   title: string;
   subtitle: string;

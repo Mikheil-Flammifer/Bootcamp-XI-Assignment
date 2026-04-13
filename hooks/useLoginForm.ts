@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { mockLogin } from "@/lib/mockAuth";
 
+import type { User } from "@/types/user/types"
 import type { Errors } from "@/types/errors/types";
 
 interface Form {
@@ -9,7 +10,7 @@ interface Form {
   password: string;
 }
 
-export function useLoginForm(onSuccess: (user: unknown) => void) {
+export function useLoginForm(onSuccess: (user: User) => void) {
   const [form, setForm] = useState<Form>({ email: "", password: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [loading, setLoading] = useState(false);

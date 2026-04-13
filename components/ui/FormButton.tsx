@@ -1,4 +1,6 @@
-// components/ui/FormButton.tsx
+/*
+Component to make input more dinamic to use in other files
+*/
 interface Props {
   label: string;
   loading?: boolean;

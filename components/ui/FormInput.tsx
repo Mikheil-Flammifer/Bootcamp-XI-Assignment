@@ -1,4 +1,8 @@
 // components/ui/FormInput.tsx
+/*
+Component to make input more dinamic to use in other files
+*/
+
 interface Props {
   label: string;
   type?: string;
@@ -7,13 +11,15 @@ interface Props {
   error?: string;
   optional?: boolean;
   autoFocus?: boolean;
+  className?: string; 
+  style?: React.CSSProperties; 
   onChange: (value: string) => void;
   onClearError?: () => void;
 }
 
 export function FormInput({
   label, type = "text", placeholder, value,
-  error, optional, autoFocus, onChange, onClearError,
+  error, optional, autoFocus, onChange, onClearError, className, style,
 }: Props) {
   return (
     <div className="flex flex-col w-[360px] min-h-[73px] gap-[8px]">
@@ -30,10 +36,15 @@ export function FormInput({
         className={`w-[360px] h-[48px] rounded-[8px] border-[1.5px] text-sm outline-none transition-colors
           ${error
             ? "border-red-400 bg-red-50 focus:border-red-500"
-            : "border-gray-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-          }`}
-        style={{ paddingTop: "12px", paddingRight: "15px", paddingBottom: "12px", paddingLeft: "13px" }}
-      />
+            : "border-gray-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"}
+          ${className ?? ""}`}
+          style={{
+              paddingTop: "12px",
+              paddingRight: "15px",
+              paddingBottom: "12px",
+              paddingLeft: "13px",
+              ...style,                                                
+            }} />
       {error && <p className="text-xs text-red-500">{error}</p>}
     </div>
   );

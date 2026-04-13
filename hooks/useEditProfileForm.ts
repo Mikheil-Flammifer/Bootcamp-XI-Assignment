@@ -57,7 +57,7 @@ export function useEditProfileForm(
     } catch {
       setErrors({ api: "Something went wrong. Please try again." });
     } finally {
-      setLoading(false);
+      setLoading(false);  
     }
   };
 

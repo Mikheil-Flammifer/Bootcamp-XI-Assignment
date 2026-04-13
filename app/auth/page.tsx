@@ -1,26 +1,22 @@
-// app/page.tsx  (or /auth) — public, not logged in
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import RegisterModal from "@/components/modals/RegisterModal";
 import LoginModal from "@/components/modals/LoginModal";
 import { saveUser } from "@/lib/storage";
-
 import type { User } from "@/types/user/types";
 
-const handleSuccess = (user: User) => {
-  saveUser(user);                  
-  window.location.href = "/dashboard";
-};
 
-
+/*
+Page for user login and register
+*/
 export default function AuthPage() {
+  const router = useRouter();
   const [modal, setModal] = useState<"register" | "login" | null>("register");
-  const [user, setUser] = useState<User | null>(null);
 
   const handleSuccess = (user: User) => {
-    setUser(user);
-    // redirect to dashboard after login/register
-    window.location.href = "/dashboard";
+    saveUser(user);
+    router.push("/profile");
   };
 
   return (

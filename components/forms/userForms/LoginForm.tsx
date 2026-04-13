@@ -6,7 +6,7 @@ import { useLoginForm } from "@/hooks/useLoginForm";
 import { User } from "@/types/user/types"
 
 interface Props {
-  onSuccess: (user: unknown) => void;
+  onSuccess: (user: User) => void;
   onSwitchToRegister: () => void;
   onClose?: () => void;
 }

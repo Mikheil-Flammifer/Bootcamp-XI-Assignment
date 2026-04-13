@@ -14,6 +14,11 @@ interface Props {
   onClose?: () => void;
 }
 
+/*
+ * Map of heights to help use them in registration part.
+ * As height of all steps differ this height map manages to solve problem.
+*/
+
 const stepHeight: Record<number, Record<number, string>> = {
   1: {0: "h-[416px]", 1: "h-[316px]", 2: "h-[254px]"},
   2: {0: "h-[513px]", 1: "h-[413px]", 2: "h-[351px]"},
@@ -46,7 +51,7 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin, onClose }: Pr
           </svg>
         </button>
       )}
-
+      {/* Box comments to help developer distinguish each other */}
       {/* Inner box: 360, gap 24px */}
       <div className={`flex flex-col w-[360px] ${stepHeight[step][1]} h-[316px] gap-[24px]`}>
 
