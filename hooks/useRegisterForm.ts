@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { mockRegister } from "@/lib/mockAuth";
+import { mockRegister } from "@/lib/mock";
 
 import type { User } from "@/types/user/types";
 import type { Errors } from "@/types/errors/types"

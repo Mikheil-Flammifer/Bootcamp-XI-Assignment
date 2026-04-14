@@ -1,4 +1,4 @@
-import { FormTitle } from "@/components/ui/forms/FormTitle";
+import { Title } from "@/components/ui/forms/Title";
 import { FormInput } from "@/components/ui/forms/FormInput";
 import { FormButton } from "@/components/ui/forms/FormButton";
 import { useLoginForm } from "@/hooks/useLoginForm";
@@ -48,9 +48,11 @@ export default function LoginForm({ onSuccess, onSwitchToRegister, onClose }: Pr
             <div className="flex flex-col w-[360px] h-[256px] gap-[24px]">
 
               {/* Title */}
-              <FormTitle
+              <Title
                 title="Welcome Back"
+                titleNameClass="font-semibold text-[32px] leading-none text-center text-gray-900 font-inter"
                 subtitle="Log in to continue learning"
+                subtitleNameClass="font-medium font-inter text-[14px] leading-none tracking-normal text-center text-gray-500"
               />
 
               {/* Form */}

@@ -1,0 +1,67 @@
+import mockUsers from "@/data/mockUsers.json";
+import mockCoursesData from "@/data/mockCurses.json";
+import type { User } from "@/types/user/types";
+import type { Course } from "@/types/course/types";
+
+// ─── Courses ────────────────────────────────────────────────────────────────
+
+const MOCK_COURSES = mockCoursesData as Course[];
+
+export function mockGetCourses(): Course[] {
+  return MOCK_COURSES;
+}
+
+export function mockGetFeaturedCourses(): Course[] {
+  return MOCK_COURSES.filter((c) => c.isFeatured);
+}
+
+export function mockGetCourseById(id: number): Course {
+  const found = MOCK_COURSES.find((c) => c.id === id);
+  if (!found) throw new Error(`Course with id ${id} not found.`);
+  return found;
+}
+
+export function mockGetCoursesByCategory(categoryId: number): Course[] {
+  return MOCK_COURSES.filter((c) => c.category.id === categoryId);
+}
+
+export function mockGetCoursesByInstructor(instructorId: number): Course[] {
+  return MOCK_COURSES.filter((c) => c.instructor.id === instructorId);
+}
+
+// ─── Users ───────────────────────────────────────────────────────────────────
+
+// strip password before returning — never expose it
+const toUser = (u: typeof mockUsers[0]): User => ({
+  id: u.id,
+  username: u.username,
+  email: u.email,
+  avatar: u.avatar,
+  fullName: u.fullName,
+  mobileNumber: u.mobileNumber,
+  age: u.age,
+  profileComplete: u.profileComplete,
+});
+
+export function mockLogin(email: string, password: string): User {
+  const found = mockUsers.find(
+    (u) => u.email === email && u.password === password
+  );
+  if (!found) throw new Error("Invalid email or password.");
+  return toUser(found);
+}
+
+export function mockRegister(email: string, username: string): User {
+  const exists = mockUsers.find((u) => u.email === email);
+  if (exists) throw new Error("Email already in use.");
+  return {
+    id: Date.now(),
+    username,
+    email,
+    avatar: null,
+    fullName: null,
+    mobileNumber: null,
+    age: null,
+    profileComplete: false,
+  };
+}

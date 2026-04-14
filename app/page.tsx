@@ -12,9 +12,9 @@ export default function RootPage() {
 
   useEffect(() => {
     const user = getUser();
-    if (user) router.push("/profile");
+    if (user) router.push("/dashboard");
     else router.push("/auth");
-  }, []);
+  }, [router]);
 
   return null;
 }

@@ -51,7 +51,6 @@ export function FormButton({
   const computed = [
     base,
     variantStyles[variant],
-    fullWidth ? "w-full" : sizeStyles[size],
     className, 
   ]
     .filter(Boolean)

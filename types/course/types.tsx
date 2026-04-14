@@ -8,7 +8,7 @@ export interface Course {
   description: string;
   image: string;
   basePrice: number;
-  durationWeeks: BigInteger;
+  durationWeeks: number; 
   isFeatured: boolean;
   avgRating: number | null;
   reviewCount: number;

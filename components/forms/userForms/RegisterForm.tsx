@@ -1,5 +1,5 @@
 import { useRegisterForm } from "@/hooks/useRegisterForm";
-import { FormTitle } from "@/components/ui/forms/FormTitle";
+import { Title } from "@/components/ui/forms/Title";
 import { FormInput } from "@/components/ui/forms/FormInput";
 import { FormButton } from "@/components/ui/forms/FormButton";
 
@@ -62,9 +62,11 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin, onClose }: Pr
           <div className={`flex flex-col w-[360px] ${stepHeight[step][2]} gap-[16px]`}>
 
             {/* Title */}
-            <FormTitle
+            <Title
               title="Create Account"
+              titleNameClass="font-semibold text-[32px] leading-none text-center text-gray-900 font-inter"
               subtitle="Join and start learning today"
+              subtitleNameClass="font-medium font-inter text-[14px] leading-none tracking-normal text-center text-gray-500"
             />
 
             {/* Step indicator */}

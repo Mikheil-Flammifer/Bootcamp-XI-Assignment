@@ -8,6 +8,7 @@ import { FormButton } from "@/components/ui/forms/FormButton"
 interface Props {
   lecturer: string;
   raiting: number;
+  title: string;
   content: string;
   prise: number;
   form?: string;
@@ -15,7 +16,7 @@ interface Props {
   onClick?: () => void;
 }
 
-export function FormCard({ lecturer, raiting, content, prise, loading, form, onClick }: Props) {
+export function Card({ lecturer, raiting, title, content, prise, loading, form, onClick }: Props) {
   return (
      <div
         className="flex flex-col rounded-[12px] cursor-pointer"
@@ -23,14 +24,12 @@ export function FormCard({ lecturer, raiting, content, prise, loading, form, onC
             width: "506px",
             height: "576px",
             padding: "20px",
-            gap: "24px",
             border: "1px solid #F5F5F5",
             background: "#FFFFFF",
-            borderRadius: "12px",
         }}
         >
         {/* frame 373 */}
-        <div className="flex flex-col w-[466px] w-[454px] gap-[16px]">
+        <div className="flex flex-col w-[466px] gap-[16px]">
             {/* frame 13 */}
             <div className="w-[466px] h-[262px] rounded-[10px] gap-[10px] pt-[87px] pr-[162px] pb-[86px] pl-[164px]">
                 {/* content here */}
@@ -40,7 +39,7 @@ export function FormCard({ lecturer, raiting, content, prise, loading, form, onC
                 {/* frame 374 */}
                  <div className="flex flex-col gap-[12px]">
                     {/* frame 371 */}
-                    <div className="flex flex-row justify-between w-[18px] gap-[12px]">
+                    <div className="flex flex-row justify-between w-full gap-[12px]">
                         {/* frame 530 */}
                         <div className="flex flex-row w-[159px] w-[17px] gap-[8px]">
                             {/* Text */}
@@ -75,6 +74,12 @@ export function FormCard({ lecturer, raiting, content, prise, loading, form, onC
                             </p>
                         </div>
                     </div>
+                    {/* frame 46 */}
+                    <p className="w-[466px] h-[58px] font-inter font-medium text-[24px] leading-[24px]"
+                        style={{ color: "#141414" }}
+                        >
+                        { title }
+                    </p>
                  </div>
              </div>
             {/* Content text */}
@@ -88,10 +93,10 @@ export function FormCard({ lecturer, raiting, content, prise, loading, form, onC
         {/*  frame 371 */}
         <div className="flex flex-row w-[466px] w-[58px] justify-between">
             {/* frame 45 */}
-            <div className="flex flex-row w-[167px] w-[39px] gap-[8px]">
+            <div className="flex flex-row items-center w-[167px] h-[39px] gap-[8px]">
                 <p className="w-[76px] h-[15px] font-inter font-medium text-[12px] "
                 style={{ color: "#8A8A8A" }}>Starting from</p>
-                <p className="w-[83px] h-[39px] font-inter font-medium text-[32px] "
+                <p className="flex w-[83px] h-[39px] font-inter font-medium font-semibold text-[32px] text-center"
                 style={{ color: "#141414" }}>${prise}</p>
             </div>
 
@@ -102,8 +107,8 @@ export function FormCard({ lecturer, raiting, content, prise, loading, form, onC
                   loading={loading}
                   loadingLabel="Details..."
                   disabled={loading}
-                  className="w-[116px] h-[58px] rounded-[8px gap-[10px]"
-                  textClassName="flex justify-center w-[66px] h-[24px] font-inter font-medium text-[20px]"
+                  className="w-[116px] h-[58px] rounded-[8px] gap-[10px] pt-[17px] pr-[25px] pl-[25px] pb-[17px]"
+                  textClassName="flex justify-center w-[66px] h-[24px]"
                 />
         </div>
     </div>

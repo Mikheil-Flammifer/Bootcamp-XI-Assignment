@@ -1,6 +1,6 @@
 // hooks/useLoginForm.ts
 import { useState } from "react";
-import { mockLogin } from "@/lib/mockAuth";
+import { mockLogin } from "@/lib/mock";
 
 import type { User } from "@/types/user/types"
 import type { Errors } from "@/types/errors/types";
