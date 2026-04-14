@@ -1,7 +1,7 @@
 import { useRegisterForm } from "@/hooks/useRegisterForm";
-import { FormTitle } from "@/components/ui/FormTitle";
-import { FormInput } from "@/components/ui/FormInput";
-import { FormButton } from "@/components/ui/FormButton";
+import { FormTitle } from "@/components/ui/forms/FormTitle";
+import { FormInput } from "@/components/ui/forms/FormInput";
+import { FormButton } from "@/components/ui/forms/FormButton";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
@@ -216,13 +216,15 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin, onClose }: Pr
 
             </form>
           {/* Button */}
-          <FormButton
-            form="register-form"
-            label={step < 3 ? "Next" : "Create account"}
-            loading={loading}
-            loadingLabel="Creating account..."
-            disabled={loading}
-          />
+            <FormButton
+              form="register-form"
+              label={step < 3 ? "Next" : "Create account"}
+              loading={loading}
+              loadingLabel="Creating account..."
+              disabled={loading}
+              variant="primary"   
+              size="md"           
+            />
           </div>
 
         {/* Footer: 360×46, gap 8px */}

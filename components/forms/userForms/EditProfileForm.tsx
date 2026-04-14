@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import { FormInput } from "@/components/ui/FormInput";
-import { FormButton } from "@/components/ui/FormButton";
+import { FormInput } from "@/components/ui/forms/FormInput";
+import { FormButton } from "@/components/ui/forms/FormButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useEditProfileForm } from "@/hooks/useEditProfileForm";
@@ -174,6 +174,8 @@ export default function EditProfileForm({ onClose, onSuccess, user }: Props) {
             loading={loading}
             loadingLabel="Updating..."
             disabled={loading}
+            variant="primary"   
+            size="md"   
           />
 
         </div>

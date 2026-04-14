@@ -1,6 +1,6 @@
-import { FormTitle } from "@/components/ui/FormTitle";
-import { FormInput } from "@/components/ui/FormInput";
-import { FormButton } from "@/components/ui/FormButton";
+import { FormTitle } from "@/components/ui/forms/FormTitle";
+import { FormInput } from "@/components/ui/forms/FormInput";
+import { FormButton } from "@/components/ui/forms/FormButton";
 import { useLoginForm } from "@/hooks/useLoginForm";
 
 import { User } from "@/types/user/types"
@@ -96,6 +96,8 @@ export default function LoginForm({ onSuccess, onSwitchToRegister, onClose }: Pr
               loading={loading}
               loadingLabel="Logging in..."
               disabled={loading}
+              variant="primary"   
+              size="md"     
             />
 
           </div>
