@@ -10,7 +10,7 @@ export interface Course {
   basePrice: number;
   durationWeeks: number; 
   isFeatured: boolean;
-  avgRating: number | null;
+  avgRating: number;
   reviewCount: number;
   category: Category;
   topic: Topic;

@@ -51,6 +51,7 @@ export function InProgressCourses({ courses, loading, isAuthorized }: Props) {
               title={course.title}
               imageSrc={course.image ?? ""}
               lecturer={course.instructor?.name}
+              rating={course.avgRating}
               isAuthorized={isAuthorized}
             />
           ))}

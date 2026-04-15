@@ -5,7 +5,7 @@ export type InProgressCardProps = {
   title: string;
   imageSrc: string;
   lecturer?: string;
-  progress?: string;
+  rating: number;
   isAuthorized?: boolean;
   loading?: boolean;
   onClick?: () => void;
@@ -15,7 +15,7 @@ export function InProgressCard({
   title,
   imageSrc,
   lecturer,
-  progress = "In Progress",
+  rating,
   isAuthorized = false,
   loading,
   onClick,
@@ -62,9 +62,13 @@ export function InProgressCard({
               <p
                 className="font-inter font-medium text-[14px]"
                 style={{ color: "#666666" }}
-              >
-                {progress}
+              > 
+                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.6479 4.81838C10.7896 5.12026 11.0725 5.33164 11.4021 5.38201L14.691 5.88447C15.4956 6.00739 15.8242 6.98876 15.2558 7.57135L12.814 10.074C12.5923 10.3012 12.4917 10.6201 12.5428 10.9333L13.1106 14.4147C13.2449 15.2386 12.3704 15.8547 11.6399 15.4509L8.79101 13.8764C8.48996 13.71 8.12453 13.71 7.8235 13.8764L4.97567 15.4507C4.24511 15.8545 3.37056 15.2384 3.50492 14.4145L4.07267 10.9334C4.12377 10.6201 4.02309 10.3011 3.80139 10.074L1.35912 7.57143C0.790594 6.98887 1.11913 6.00737 1.9238 5.88446L5.21324 5.38201C5.54296 5.33165 5.82586 5.1202 5.96754 4.81825L7.40211 1.76078C7.76195 0.993865 8.8527 0.993786 9.21265 1.76065L10.6479 4.81838Z" fill="#F4A316"/>
+                </svg>
+                {rating}
               </p>
+
             </div>
 
             {/* Title */}
@@ -81,12 +85,15 @@ export function InProgressCard({
       {/* Bottom section */}
       <div className="flex flex-row justify-between w-[466px] h-[48px] items-end opacity-[0.76]">
         {/* Empty progress space */}
-        <div className="w-[336px] h-[39px]" />
+        <div className="flex flex-col w-[336px] h-[39px]">
+          <p className="w-[336px] h-[18px] text-[12px]">Master modern React patterns, hooks, and TypeScrip</p>
+        </div>
 
         {/* Button */}
         <FormButton
           label="View"
           loading={loading}
+          variant="ghost"
           loadingLabel="Loading..."
           disabled={!isAuthorized}
           onClick={onClick}

@@ -1,5 +1,6 @@
 "use client";
 import { HeaderNavbar } from "@/components/ui/sections/HeaderNavbar"
+import { HeroSlider } from "@/components/ui/sections/HeroSlider"
 import { FeaturedCourses } from "@/components/ui/sections/FeaturedCourses";
 import { InProgressCourses } from "@/components/ui/sections/InProgressCourses";
 import { mockGetCourses, mockGetFeaturedCourses } from "@/lib/mock";
@@ -16,6 +17,7 @@ export default function DashboardPage() {
 
       {/* Page content */}
       <main className="flex flex-col w-[1920px] h-[2282px] items-center py-[60px] gap-[64px]">
+        <HeroSlider/>
         <FeaturedCourses courses={featuredCourses} />
         <InProgressCourses courses={inProgressCourses}/>
       </main>
