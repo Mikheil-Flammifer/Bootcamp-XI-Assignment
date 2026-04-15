@@ -19,9 +19,9 @@ export function FeaturedCourses({ courses, loading }: Props) {
                  {/* Title */}
                     <Title
                         title="Start Learning Today"
-                        titleNameClass="h-[48px] font-semibold text-[32px] leading-none text-center size-[40px] text-gray-950 font-inter"
+                        titleNameClass="w-[538px] h-[48px] font-semibold text-[32px] leading-none size-[40px] text-gray-950 font-inter"
                         subtitle="Choose from our most popular courses and begin your journey"
-                        subtitleNameClass="h-[22px] font-medium font-inter text-[14px] leading-none tracking-normal text-center size-[18px] text-gray-700"
+                        subtitleNameClass="w-[538px] h-[22px] font-medium font-inter text-[14px] leading-none tracking-normal size-[18px] text-gray-700"
                     />
                </div>
          </div>

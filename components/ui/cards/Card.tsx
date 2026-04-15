@@ -99,7 +99,7 @@ export function Card({ lecturer, raiting, title, content, prise, loading, form, 
                 <p className="flex w-[83px] h-[39px] font-inter font-medium font-semibold text-[32px] text-center"
                 style={{ color: "#141414" }}>${prise}</p>
             </div>
-
+                
              {/* Button */}
                 <FormButton
                   form="login-form"
@@ -107,7 +107,7 @@ export function Card({ lecturer, raiting, title, content, prise, loading, form, 
                   loading={loading}
                   loadingLabel="Details..."
                   disabled={loading}
-                  className="w-[116px] h-[58px] rounded-[8px] gap-[10px] pt-[17px] pr-[25px] pl-[25px] pb-[17px]"
+                  className="h-[58px] rounded-[8px] gap-[10px] pt-[17px] pr-[25px] pl-[25px] pb-[17px]"
                   textClassName="flex justify-center w-[66px] h-[24px]"
                 />
         </div>

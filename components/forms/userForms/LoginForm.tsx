@@ -94,6 +94,7 @@ export default function LoginForm({ onSuccess, onSwitchToRegister, onClose }: Pr
             {/* Button */}
             <FormButton
               form="login-form"
+              type="submit"
               label="Log in"
               loading={loading}
               loadingLabel="Logging in..."

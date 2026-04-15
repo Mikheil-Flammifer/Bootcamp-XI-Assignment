@@ -1,66 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Course Platform
+
+A web app for browsing and accessing online courses, with full user authentication and profile management.
+
+---
+
+## What It Does
+
+Users land on a public page where they can browse available courses. From the navbar they can log in or create an account. Once authenticated, they have access to their profile and personalized content.
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-# Auth & Profile Forms
-
-Modal forms for Register, Login, and Edit Profile built with React, TypeScript and Tailwind CSS.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ---
 
-## Registration Form
+## Features
 
-3-step form that collects user details progressively.
+### Navbar
+Persistent top navigation with a Browse Courses link and Log In / Sign Up buttons. Clicking the logo returns to the dashboard when logged in.
 
-1. **Email** — validates format
-2. **Password** — min 6 chars, must match confirm
-3. **Profile** — username + optional avatar upload (JPG, PNG, WebP)
+### Registration
+A 3-step flow that walks the user through:
+1. Email address
+2. Password setup
+3. Username and optional profile photo
 
-On final step submits to API (or `mockRegister` in dev) and calls `onSuccess(user)`.
+### Login
+Single-screen email and password login with inline error feedback.
 
-**Hook:** `useRegisterForm` — step state, per-step validation, avatar file handling, API submission.
-
----
-
-## Login Form
-
-Single step — email + password. Calls `onSuccess(user)` on success, shows inline API error on failure.
-
-**Hook:** `useLoginForm` — validation, API submission (or `mockLogin` in dev).
+### Edit Profile
+Users can update their full name, email, phone number, age, and profile photo from their account settings.
 
 ---
 
-## Edit Profile Form
+## Auth in Development
 
-Shows current user's avatar, username, and online status at the top. Fields: Full Name, Email, Mobile Number, Age, Avatar upload.
-
-**Hook:** `useEditProfileForm(initialUser, onSuccess)` — initializes fields from the `User` object, validates, submits PATCH to API.
-
----
-
-
-## Mock Auth (dev only)
-
-Before the backend is ready, `src/lib/mockAuth.ts` provides:
-- `mockLogin(email, password)` — finds user in `src/data/mockUsers.json`
-- `mockRegister(email, username)` — returns a new fake user
-
-User is persisted via `src/lib/storage.ts` (`saveUser`, `getUser`, `clearUser`) using `localStorage`. Swap for real API calls when backend is ready — nothing else changes.
+While the backend is not yet connected, all auth flows run against local mock data. User sessions are stored in `localStorage` and persist across page refreshes. Swapping in real API calls requires no changes outside of `src/lib/mockAuth.ts`.

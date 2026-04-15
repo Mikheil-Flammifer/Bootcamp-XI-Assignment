@@ -1,13 +1,22 @@
 "use client";
-import { FeaturedCourses } from "@/components/ui/featuredCourses/FeaturedCourses";
+import { HeaderNavbar } from "@/components/ui/sections/HeaderNavbar"
+import { FeaturedCourses } from "@/components/ui/sections/FeaturedCourses";
 import { mockGetFeaturedCourses } from "@/lib/mock";
 
 export default function DashboardPage() {
   const featuredCourses = mockGetFeaturedCourses();
 
   return (
-    <main className="flex flex-col items-center px-[40px] py-[60px] gap-[60px]">
-      <FeaturedCourses courses={featuredCourses} />
-    </main>
+    <div className="flex flex-col min-h-screen bg-[#F5F5F5]">
+      
+      {/* Navbar */}
+      <HeaderNavbar />
+
+      {/* Page content */}
+      <main className="flex flex-col w-[1920px] h-[2282px] items-center py-[60px] gap-[64px]">
+        <FeaturedCourses courses={featuredCourses} />
+      </main>
+
+    </div>
   );
 }

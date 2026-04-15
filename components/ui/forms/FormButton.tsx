@@ -1,7 +1,3 @@
-/*
-Component to make input more dynamic to use in other files
-*/
-
 type Variant = "primary" | "secondary" | "danger" | "ghost";
 type Size = "sm" | "md" | "lg";
 
@@ -17,6 +13,7 @@ interface Props {
   fullWidth?: boolean;
   className?: string;
   textClassName?: string;
+  type?: "button" | "submit" | "reset";
 }
 
 const variantStyles: Record<Variant, string> = {
@@ -43,7 +40,8 @@ export function FormButton({
   size = "md",
   fullWidth = false,
   className = "",
-  textClassName = variantStyles["primary"],
+  textClassName = "",
+  type = "button", 
 }: Props) {
   const base =
     "rounded-[8px] font-medium transition-all disabled:opacity-60 disabled:cursor-not-allowed";
@@ -51,20 +49,20 @@ export function FormButton({
   const computed = [
     base,
     variantStyles[variant],
-    className, 
+    className,
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
     <button
-      type="submit"
+      type={type}
       form={form}
       disabled={disabled || loading}
       onClick={onClick}
       className={computed}
     >
-      <span className={textClassName}>  
+      <span className={textClassName}>
         {loading ? loadingLabel : label}
       </span>
     </button>

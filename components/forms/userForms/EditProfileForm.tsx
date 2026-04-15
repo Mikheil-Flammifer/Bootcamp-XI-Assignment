@@ -170,6 +170,7 @@ export default function EditProfileForm({ onClose, onSuccess, user }: Props) {
 
           <FormButton
             form="edit-profile-form"
+            type="submit"
             label="Update Profile"
             loading={loading}
             loadingLabel="Updating..."

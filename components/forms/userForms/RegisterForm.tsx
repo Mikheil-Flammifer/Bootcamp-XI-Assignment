@@ -220,6 +220,7 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin, onClose }: Pr
           {/* Button */}
             <FormButton
               form="register-form"
+              type="submit"
               label={step < 3 ? "Next" : "Create account"}
               loading={loading}
               loadingLabel="Creating account..."
