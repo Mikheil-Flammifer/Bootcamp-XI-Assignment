@@ -6,6 +6,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FormButton } from "@/components/ui/forms/FormButton"
 
 interface Props {
+  imageSrc: string;
   lecturer: string;
   raiting: number;
   title: string;
@@ -16,7 +17,7 @@ interface Props {
   onClick?: () => void;
 }
 
-export function Card({ lecturer, raiting, title, content, prise, loading, form, onClick }: Props) {
+export function FeaturedCard({ imageSrc, lecturer, raiting, title, content, prise, loading, form, onClick }: Props) {
   return (
      <div
         className="flex flex-col rounded-[12px] cursor-pointer"
@@ -31,9 +32,11 @@ export function Card({ lecturer, raiting, title, content, prise, loading, form, 
         {/* frame 373 */}
         <div className="flex flex-col w-[466px] gap-[16px]">
             {/* frame 13 */}
-            <div className="w-[466px] h-[262px] rounded-[10px] gap-[10px] pt-[87px] pr-[162px] pb-[86px] pl-[164px]">
-                {/* content here */}
-            </div>
+            <img
+                src={imageSrc}
+                alt={title}
+                className="w-[466px] h-[262px] rounded-[10px] gap-[10px]"
+            />
             {/* frame 372 */}
              <div className="flex flex-col w-[466px] w-[88px] gap-[16px]">
                 {/* frame 374 */}

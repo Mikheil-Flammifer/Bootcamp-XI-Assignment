@@ -1,6 +1,6 @@
 import type { Course } from "@/types/course/types"
 import { Title } from "@/components/ui/forms/Title"
-import { Card } from "@/components/ui/cards/Card"
+import { FeaturedCard } from "@/components/ui/cards/FeaturedCard"
 
 interface Props {
   courses: Course[];
@@ -29,8 +29,9 @@ export function FeaturedCourses({ courses, loading }: Props) {
          <div className="flex flex-row w-[1556px] w-[576px] gap-[24px]">
             {/* Card 1 - 3 */}
             {courses.map((course) => (
-                <Card
+                <FeaturedCard
                     key={course.id}
+                    imageSrc={course.image} 
                     lecturer={course.instructor.name} 
                     raiting={course.avgRating ?? 0}
                     title={course.title}    
