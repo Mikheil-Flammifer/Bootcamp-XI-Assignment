@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "avatar": "/avatars/john.jpg",
+    "title": "Senior Frontend Engineer"
+  },
+  {
+    "id": 2,
+    "name": "Alex Smith",
+    "avatar": "/avatars/alex.jpg",
+    "title": "Backend Architect"
+  },
+  {
+    "id": 3,
+    "name": "Emma Brown",
+    "avatar": "/avatars/emma.jpg",
+    "title": "UI/UX Designer"
+  }
+]

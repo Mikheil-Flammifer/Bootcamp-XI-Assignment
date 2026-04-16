@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Development",
+    "icon": "/icons/development.svg"
+  },
+  {
+    "id": 2,
+    "name": "Business",
+    "icon": "/icons/business.svg"
+  },
+  {
+    "id": 3,
+    "name": "Design",
+    "icon": "/icons/design.svg"
+  },
+  {
+    "id": 4,
+    "name": "Marketing",
+    "icon": "/icons/marketing.svg"
+  },
+  {
+    "id": 5,
+    "name": "IT & Software",
+    "icon": "/icons/it.svg"
+  },
+  {
+    "id": 6,
+    "name": "Personal Development",
+    "icon": "/icons/personal.svg"
+  },
+  {
+    "id": 7,
+    "name": "Photography",
+    "icon": "/icons/photography.svg"
+  },
+  {
+    "id": 8,
+    "name": "Music",
+    "icon": "/icons/music.svg"
+  }
+]

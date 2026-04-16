@@ -1,4 +1,18 @@
-export function CatalogCuorsesFilter() {
+import type { Category } from "@/types/category/types";
+import type { Topic } from "@/types/topic/types";
+import type { Instructor } from "@/types/instructor/types";
+
+interface Props {
+  categories: Category[];
+  lecturers: Instructor[];
+  topics: Topic[];
+}
+
+export function CatalogCuorsesFilter({
+          categories,
+          topics,
+          lecturers,
+        }: Props) {
   return (
     <div
       className="w-[309px] h-[914px] flex flex-col gap-[24px] absolute top-[234px] left-[177px]"
@@ -78,7 +92,19 @@ export function CatalogCuorsesFilter() {
                         className="w-[102px] h-[24px] text-[16px] font-medium
                                     leading-[24px] text-center text-[#666666]"
                         >
-                        Category 1
+                        {categories.map((cat) => (
+                          <div
+                            key={cat.id}
+                            className="w-[160px] h-[39px] flex items-center gap-[10px]
+                                      px-[12px] py-[8px] rounded-[12px]
+                                      bg-white border border-[#E5E5E5]"
+                          >
+                            <img src={cat.icon} className="w-[24px] h-[24px]" />
+                            <span className="text-[16px] font-medium text-[#666666]">
+                              {cat.name}
+                            </span>
+                          </div>
+                        ))}
                         </span>
                     </div>
 
@@ -115,7 +141,17 @@ export function CatalogCuorsesFilter() {
                         className="w-[102px] h-[24px] text-[16px] font-medium
                                     leading-[24px] text-center text-[#666666]"
                         >
-                        Category 1
+                          {topics.map((topic) => (
+                            <div
+                              key={topic.id}
+                              className="w-[160px] h-[39px] flex items-center px-[12px] py-[8px]
+                                        rounded-[12px] bg-white border border-[#E5E5E5]"
+                            >
+                              <span className="text-[16px] font-medium text-[#666666]">
+                                {topic.name}
+                              </span>
+                            </div>
+                          ))}
                         </span>
                     </div>
 
@@ -154,8 +190,25 @@ export function CatalogCuorsesFilter() {
                         className="w-[113px] h-[24px] text-[16px] font-medium
                                     leading-[24px] text-[#666666]"
                         >
-                        Instructor Name
-                        </span>
+                        {lecturers.map((ins) => (
+                          <div
+                            key={ins.id}
+                            className="w-[179px] h-[46px] flex items-center gap-[12px]
+                                      px-[12px] py-[8px] rounded-[12px] bg-white"
+                          >
+                            <div className="w-[30px] h-[30px] rounded-[4px] overflow-hidden">
+                              <img
+                                src={ins.avatar}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+
+                            <span className="text-[16px] font-medium text-[#666666]">
+                              {ins.name}
+                            </span>
+                          </div>
+                        ))}
+                                                </span>
                     </div>
                </div>
             </div>

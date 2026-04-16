@@ -4,11 +4,20 @@ import mockCoursesData from "@/data/mockCurses.json";
 import mockEnrollments from "@/data/mockEnrollments.json"
 import type { User } from "@/types/user/types";
 import type { Course } from "@/types/course/types";
+import type { Topic } from "@/types/topic/types";
+import type { Category } from "@/types/category/types";
+import type { Instructor } from "@/types/instructor/types";
 import type { Enrollment } from "@/types/enrollment/types";
+import mockInstructors from "@/data/mockInstructors.json";
+import mockTopics from "@/data/mockTopics.json";
+import mockCategories from "@/data/mockCategories.json";
 
 // ─── Courses ────────────────────────────────────────────────────────────────
 
 const MOCK_COURSES = mockCoursesData as Course[];
+const MOCK_CATEGORIES = mockCategories as Category[];
+const MOCK_INSTRUCTORS = mockInstructors as Instructor[];
+const MOCK_TOPICS = mockTopics as Topic[];
 
 export function mockGetCourses(): Course[] {
   return MOCK_COURSES;
@@ -89,4 +98,30 @@ export function getCourseProgress(courseId: number): number {
   );
 
   return enrollment?.progress ?? 0;
+}
+
+// Instructor 
+
+export function mockGetinstructors(): Instructor[] {
+  return MOCK_INSTRUCTORS;
+}
+
+export function mockGetinstructorById(id: number): Instructor {
+  const found = MOCK_INSTRUCTORS.find((l) => l.id === id);
+  if (!found) throw new Error(`instructor ${id} not found`);
+  return found;
+}
+
+// Topics
+export function mockGetTopics(): Topic[] {
+  return MOCK_TOPICS;
+}
+
+export function mockGetTopicsByCategory(categoryId: number): Topic[] {
+  return MOCK_TOPICS.filter((t) => t.categoryId === categoryId);
+}
+
+// Categories 
+export function mockGetCategories(): Category[] {
+  return MOCK_CATEGORIES;
 }

@@ -12,7 +12,7 @@ interface Props {
 
 export function CatalogCourses({ courses, loading }: Props) {
   return (
-    <div className="w-[1167px] h-[1554px] flex flex-col gap-[32px] mx-auto">
+    <div className="w-[1167px] h-[1554px] flex flex-col gap-[32px]">
 
       {/* Header (Frame 333) */}
       <div className="w-[1167px] h-[49px] flex justify-between items-center">

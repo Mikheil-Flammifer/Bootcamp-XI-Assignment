@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "name": "Frontend Development",
+    "categoryId": 1
+  },
+  {
+    "id": 2,
+    "name": "Backend Development",
+    "categoryId": 1
+  },
+  {
+    "id": 3,
+    "name": "Fullstack Development",
+    "categoryId": 1
+  },
+  {
+    "id": 4,
+    "name": "Business Strategy",
+    "categoryId": 2
+  },
+  {
+    "id": 5,
+    "name": "Entrepreneurship",
+    "categoryId": 2
+  },
+  {
+    "id": 6,
+    "name": "UI/UX Design",
+    "categoryId": 3
+  },
+  {
+    "id": 7,
+    "name": "Graphic Design",
+    "categoryId": 3
+  },
+  {
+    "id": 8,
+    "name": "Digital Marketing",
+    "categoryId": 4
+  },
+  {
+    "id": 9,
+    "name": "SEO",
+    "categoryId": 4
+  },
+  {
+    "id": 10,
+    "name": "Cloud Computing",
+    "categoryId": 5
+  },
+  {
+    "id": 11,
+    "name": "Cyber Security",
+    "categoryId": 5
+  },
+  {
+    "id": 12,
+    "name": "Self Improvement",
+    "categoryId": 6
+  },
+  {
+    "id": 13,
+    "name": "Productivity",
+    "categoryId": 6
+  },
+  {
+    "id": 14,
+    "name": "Photography Basics",
+    "categoryId": 7
+  },
+  {
+    "id": 15,
+    "name": "Advanced Photography",
+    "categoryId": 7
+  },
+  {
+    "id": 16,
+    "name": "Music Theory",
+    "categoryId": 8
+  },
+  {
+    "id": 17,
+    "name": "Instrument Practice",
+    "categoryId": 8
+  }
+]
