@@ -37,6 +37,7 @@ export function HeroSlider() {
           transform: `translateX(-${current * 1566}px)`,
         }}
       >
+      
         {slides.map((slide) => (
           <div
             key={slide.id}
@@ -63,7 +64,7 @@ export function HeroSlider() {
                 <h1 className="text-[48px] font-bold leading-[100%] text-white">
                   {slide.title}
                 </h1>
-
+                
                 {/* Body text */}
                 <p className="w-[1218px] text-white text-base">
                   {slide.description}

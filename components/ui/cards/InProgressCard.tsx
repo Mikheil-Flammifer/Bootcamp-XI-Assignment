@@ -6,6 +6,7 @@ export type InProgressCardProps = {
   imageSrc: string;
   lecturer?: string;
   rating: number;
+  progress: number;
   isAuthorized?: boolean;
   loading?: boolean;
   onClick?: () => void;
@@ -16,6 +17,7 @@ export function InProgressCard({
   imageSrc,
   lecturer,
   rating,
+  progress,
   isAuthorized = false,
   loading,
   onClick,
@@ -82,11 +84,17 @@ export function InProgressCard({
         </div>
       </div>
 
-      {/* Bottom section */}
+      {/* frame 491 */}
       <div className="flex flex-row justify-between w-[466px] h-[48px] items-end opacity-[0.76]">
-        {/* Empty progress space */}
-        <div className="flex flex-col w-[336px] h-[39px]">
-          <p className="w-[336px] h-[18px] text-[12px]">Master modern React patterns, hooks, and TypeScrip</p>
+        {/* frame 490 */}
+        <div className="flex flex-col w-[336px] h-[39.1px] pb-[4px] gap-[4px]">
+          <p className="w-[336px] h-[18px] text-[12px]">Completed: {progress}%</p>
+          <div className="w-[336px] h-[15px] rounded-full bg-[#DDDBFA] overflow-hidden">
+          <div
+            className="h-full bg-[#4F46E5] rounded-full transition-all duration-300"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
         </div>
 
         {/* Button */}

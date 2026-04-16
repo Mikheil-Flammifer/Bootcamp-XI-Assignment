@@ -12,10 +12,11 @@ interface Props {
   onLogout: () => void;
   onSwitchToLogin: () => void;
   onSwitchToRegister: () => void;
+  onProfileClick: () => void;
   isAuthorized?: boolean;
 }
 
-export function HeaderNavbar({ user, onLogout, onSwitchToLogin, onSwitchToRegister } : Props) {
+export function HeaderNavbar({ user, onLogout, onSwitchToLogin, onSwitchToRegister, onProfileClick } : Props) {
   return (
     <header className="w-[1920px] h-[108px] bg-[#F5F5F5] relative z-50 border-b border-[#D1D1D1] shadow-[0px_0px_11.7px_0px_#0000000A] px-[177px] py-[24px]">
       
@@ -41,7 +42,8 @@ export function HeaderNavbar({ user, onLogout, onSwitchToLogin, onSwitchToRegist
 
         {/* Frame 327 (Nav + Buttons together) */}
         {user
-          ? <NavItemAuthorized />
+          ? <NavItemAuthorized 
+              onProfileClick={onProfileClick}/>
           : <NavItemUnauthorized 
              onSwitchToLogin={onSwitchToLogin} 
              onSwitchToRegister={onSwitchToRegister}/>

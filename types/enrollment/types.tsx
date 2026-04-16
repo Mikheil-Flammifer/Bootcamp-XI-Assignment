@@ -6,7 +6,7 @@ export interface Enrollment {
   quantity: number;
   totalPrice: number;
   progress: number;
-  completedAt: string;
+  completedAt: string | null;
   course: Course;
   schedule: Schedule;
 }

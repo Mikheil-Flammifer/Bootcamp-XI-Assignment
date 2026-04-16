@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "quantity": 1,
+    "totalPrice": 49,
+    "progress": 60,
+    "completedAt": null,
+    "course": {
+      "id": 1,
+      "title": "React for Beginners",
+      "description": "Learn the fundamentals of React and build modern web applications from scratch.",
+      "image": "/images/269283b9163a230a81cd5602149953a8d051a0d1.jpg",
+      "basePrice": 49,
+      "durationWeeks": 6,
+      "isFeatured": true,
+      "avgRating": 4.8,
+      "reviewCount": 120,
+      "category": {
+        "id": 1,
+        "name": "Development",
+        "icon": "/icons/development.svg"
+      },
+      "topic": {
+        "id": 1,
+        "name": "Frontend",
+        "categoryId": 1
+      },
+      "instructor": {
+        "id": 1,
+        "name": "John Doe",
+        "avatar": "/avatars/john-doe.png"
+      }
+    },
+    "schedule": {
+      "id": 1,
+      "weeklySchedule": {
+        "id": 1,
+        "label": "Mon / Wed / Fri",
+        "days": "Mon,Wed,Fri"
+      },
+      "timeSlot": {
+        "id": 1,
+        "label": "Morning",
+        "startTime": "10:00",
+        "endTime": "12:00"
+      },
+      "sessionType": {
+        "id": 1,
+        "courseScheduleId": 1,
+        "name": "online",
+        "priceModifier": "0",
+        "availableSeats": 30,
+        "location": null
+      },
+      "location": null
+    }
+  },
+  {
+    "id": 2,
+    "quantity": 1,
+    "totalPrice": 59,
+    "progress": 25,
+    "completedAt": null,
+    "course": {
+      "id": 2,
+      "title": "TypeScript Mastery",
+      "description": "Master TypeScript and write safer, more scalable JavaScript applications.",
+      "image": "/images/269283b9163a230a81cd5602149953a8d051a0d1.jpg",
+      "basePrice": 59,
+      "durationWeeks": 8,
+      "isFeatured": true,
+      "avgRating": 4.5,
+      "reviewCount": 98,
+      "category": {
+        "id": 1,
+        "name": "Development",
+        "icon": "/icons/development.svg"
+      },
+      "topic": {
+        "id": 2,
+        "name": "Language",
+        "categoryId": 1
+      },
+      "instructor": {
+        "id": 2,
+        "name": "Jane Smith",
+        "avatar": "/avatars/jane-smith.png"
+      }
+    },
+    "schedule": {
+      "id": 2,
+      "weeklySchedule": {
+        "id": 2,
+        "label": "Tue / Thu",
+        "days": "Tue,Thu"
+      },
+      "timeSlot": {
+        "id": 2,
+        "label": "Evening",
+        "startTime": "18:00",
+        "endTime": "20:00"
+      },
+      "sessionType": {
+        "id": 2,
+        "courseScheduleId": 2,
+        "name": "online",
+        "priceModifier": "10",
+        "availableSeats": 20,
+        "location": null
+      },
+      "location": null
+    }
+  }
+]

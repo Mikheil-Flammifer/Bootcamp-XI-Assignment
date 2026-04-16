@@ -1,8 +1,10 @@
 "use client";
 import mockUsers from "@/data/mockUsers.json";
 import mockCoursesData from "@/data/mockCurses.json";
+import mockEnrollments from "@/data/mockEnrollments.json"
 import type { User } from "@/types/user/types";
 import type { Course } from "@/types/course/types";
+import type { Enrollment } from "@/types/enrollment/types";
 
 // ─── Courses ────────────────────────────────────────────────────────────────
 
@@ -75,4 +77,16 @@ export function getUser(): User | null {
 
 export function logout() {
   localStorage.removeItem("user");
+}
+
+export function getUserEnrollments() {
+  return mockEnrollments;
+}
+
+export function getCourseProgress(courseId: number): number {
+  const enrollment = mockEnrollments.find(
+    (e) => e.course.id === courseId
+  );
+
+  return enrollment?.progress ?? 0;
 }

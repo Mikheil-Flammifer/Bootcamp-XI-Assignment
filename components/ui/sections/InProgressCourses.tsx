@@ -1,15 +1,15 @@
-import type { Course } from "@/types/course/types";
 import { Title } from "@/components/ui/forms/Title";
 import { InProgressCard } from "@/components/ui/cards/InProgressCard";
 import { LoginPromptContent } from "@/components/ui/sections/LoginPromptContent"
+import { Enrollment } from "@/types/enrollment/types";
 
 interface Props {
-  courses: Course[];
+  enrollments: Enrollment[] | null;
   loading?: boolean;
   isAuthorized?: boolean;
 }
 
-export function InProgressCourses({ courses, loading, isAuthorized }: Props) {
+export function InProgressCourses({ enrollments, loading, isAuthorized }: Props) {
   return (
     /* frame 249 */
     <div className="relative flex flex-col w-[1566px] h-[369px] gap-[32px]">
@@ -44,17 +44,18 @@ export function InProgressCourses({ courses, loading, isAuthorized }: Props) {
       <div className={`flex flex-row w-[1566px] h-[219px] gap-[24px] transition ${
             !isAuthorized ? "blur-[2.5px] opacity-85" : ""
           }`}
-        >
-          {courses.slice(0, 3).map((course) => (
+        > 
+          {enrollments ? enrollments.slice(0, 3).map((enrollment) => (
             <InProgressCard
-              key={course.id}
-              title={course.title}
-              imageSrc={course.image ?? ""}
-              lecturer={course.instructor?.name}
-              rating={course.avgRating}
+              key={enrollment.id}
+              title={enrollment.course.title}
+              imageSrc={enrollment.course.image ?? ""}
+              lecturer={enrollment.course.instructor?.name}
+              rating={enrollment.course.avgRating}
+              progress={enrollment.progress}
               isAuthorized={isAuthorized}
             />
-          ))}
+          )) : ""}
         </div>
 
         {/* OVERLAY (only when locked) */}
