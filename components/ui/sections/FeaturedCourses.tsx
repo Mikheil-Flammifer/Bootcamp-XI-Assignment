@@ -36,7 +36,7 @@ export function FeaturedCourses({ courses, loading }: Props) {
                     raiting={course.avgRating ?? 0}
                     title={course.title}    
                     content={course.description}       
-                    prise={course.basePrice}          
+                    prise={course.basePrice}         
                     loading={loading}
                 />
             ))}

@@ -76,8 +76,8 @@ export default function DashboardPage() {
       {/* Page content */}
       <main className="flex flex-col w-[1920px] h-[2282px] items-center py-[60px] gap-[64px]">
         <HeroSlider/>
-        <FeaturedCourses courses={featuredCourses} />
         <InProgressCourses isAuthorized={!!user} enrollments={enrollments}/>
+        <FeaturedCourses courses={featuredCourses} />
       </main>
 
     </div>

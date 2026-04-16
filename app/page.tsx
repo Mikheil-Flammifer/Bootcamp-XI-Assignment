@@ -1,20 +1,18 @@
-"use client";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { getUser } from "@/lib/storage";
+// middleware.ts
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
+export function middleware(req: NextRequest) {
+  const user = req.cookies.get("user")?.value; 
 
-/*
-Main page of app
-*/
-export default function RootPage() {
-  const router = useRouter();
+  const { pathname } = req.nextUrl;
 
-  useEffect(() => {
-    const user = getUser();
-    if (user) router.push("/dashboard");
-    else router.push("/auth");
-  }, [router]);
+  if (pathname === "/") {
+    if (user) {
+      return NextResponse.redirect(new URL("/dashboard", req.url));
+    }
+    return NextResponse.redirect(new URL("/catalog", req.url));
+  }
 
-  return null;
+  return NextResponse.next();
 }

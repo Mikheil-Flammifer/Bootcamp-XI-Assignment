@@ -17,7 +17,8 @@ interface Props {
   onClick?: () => void;
 }
 
-export function FeaturedCard({ imageSrc, lecturer, raiting, title, content, prise, loading, form, onClick }: Props) {
+
+export function FeaturedCard({ imageSrc, lecturer, raiting, title, content, prise,  loading, form, onClick }: Props) {
   return (
      <div
         className="flex flex-col rounded-[12px] cursor-pointer"
