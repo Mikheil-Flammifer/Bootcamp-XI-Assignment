@@ -99,7 +99,8 @@ export default function LoginForm({ onSuccess, onSwitchToRegister, onClose }: Pr
               loading={loading}
               loadingLabel="Logging in..."
               disabled={loading}
-              variant="primary"   
+              variant="primary" 
+              className="w-[360px] h-[47px] gap-[16px]"  
               size="md"     
             />
 

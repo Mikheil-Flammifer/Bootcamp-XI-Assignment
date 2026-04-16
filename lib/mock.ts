@@ -1,3 +1,4 @@
+"use client";
 import mockUsers from "@/data/mockUsers.json";
 import mockCoursesData from "@/data/mockCurses.json";
 import type { User } from "@/types/user/types";
@@ -48,6 +49,7 @@ export function mockLogin(email: string, password: string): User {
     (u) => u.email === email && u.password === password
   );
   if (!found) throw new Error("Invalid email or password.");
+  localStorage.setItem("user", JSON.stringify(found));
   return toUser(found);
 }
 
@@ -64,4 +66,13 @@ export function mockRegister(email: string, username: string): User {
     age: null,
     profileComplete: false,
   };
+}
+
+export function getUser(): User | null {
+  const data = localStorage.getItem("user");
+  return data ? JSON.parse(data) : null;
+}
+
+export function logout() {
+  localStorage.removeItem("user");
 }

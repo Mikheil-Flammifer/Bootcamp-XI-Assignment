@@ -226,6 +226,7 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin, onClose }: Pr
               loadingLabel="Creating account..."
               disabled={loading}
               variant="primary"   
+              className="w-[360px] h-[47px] gap-[16px]"
               size="md"           
             />
           </div>
